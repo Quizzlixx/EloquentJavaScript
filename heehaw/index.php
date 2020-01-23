@@ -14,7 +14,7 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 $title = "Hee Haw!";
 $jumbotron = "index.php";
-$description = "Eloquent JavaScript Ch. 2: Hee Haw!";
+$description = "Eloquent JavaScript Ch. 3: Hee Haw! as a function that takes input";
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +39,14 @@ $description = "Eloquent JavaScript Ch. 2: Hee Haw!";
     </div>
 </div> <!-- /header -->
 <div class="container"> <!-- container -->
-    <p>Check the console :)</p>
+
+    <label for="userInput">Please input a number</label>
+    <input type="text" id="userInput" name="userInput">
+
+    <button type="button" id="go" class="btn btn-primary">Go!</button>
+
+    <p id="insert"></p>
+
 </div> <!-- /container -->
 <!-- jQuery -->
 <!-- slim jQuery does not support AJAX -->
@@ -51,7 +58,13 @@ $description = "Eloquent JavaScript Ch. 2: Hee Haw!";
 <!-- my JS -->
 <script src="scripts/heehaw.js"></script>
 <script>
-    heeHaw();
+
+    let go = document.getElementById(id = "go");
+    go.addEventListener('click', function(){
+        let number = document.getElementById("userInput").value;
+        heeHaw(number);
+    });
+
 </script>
 </body>
 </html>
